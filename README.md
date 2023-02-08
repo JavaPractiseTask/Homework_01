@@ -4,7 +4,7 @@
 <p>Выведите на экран надпись: </p>
  <quote>Your time is limited, so don’t waste it living someone else’s life" Steve Jobs на разных строках </quote>
 </div>
-
+<hr>
 <div>
 <b>Задание 2</b>
 <p>Выведите на экран надпись: </p>
