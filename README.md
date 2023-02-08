@@ -83,6 +83,10 @@
          <td>3 x 2 = 6</td>
          <td>3 x 3 = 9</td>
          <td>3 x 10 = 30.</td>
+         <td>5 x 1 = 5</td>
+         <td>5 x 2 = 10</td>
+         <td>5 x 3 = 15</td>
+         <td>5 x 10 = 50.</td>
      </tr>
     </table>
   </div>
