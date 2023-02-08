@@ -9,8 +9,10 @@ public class Main {
 
          Task_02 task = new Task_02(0);
          System.out.printf(task.GetPercent());
-      */
-        Task_03 task = new Task_03(3);
-        System.out.printf("Generate integer from string : " + task.GenerateInt());
+
+         Task_03 task = new Task_03(3);
+         System.out.printf("Generate integer from string : " + task.GenerateInt());
+         */
+        Task_04 task = new Task_04();
     }
 }
