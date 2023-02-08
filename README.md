@@ -79,10 +79,10 @@
   <div>
       <table>
       <tr>
-         <td>Hi, I'm your first cell.</td>
-         <td>I'm your second cell.</td>
-         <td>I'm your third cell.</td>
-         <td>I'm your fourth cell.</td>
+         <td>3 x 1 = 3.</td>
+         <td>3 x 2 = 6</td>
+         <td>3 x 3 = 9</td>
+         <td>3 x 10 = 30.</td>
      </tr>
     </table>
   </div>
