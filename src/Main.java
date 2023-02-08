@@ -17,12 +17,16 @@ public class Main {
          System.out.printf("Generate integer from string : " + task.GenerateInt());
          Task_04 task = new Task_04();
 
-         */
+
         System.out.printf("Press 0 for exit");
          do {
             var keyboard= new Scanner(System.in);
             System.out.print("Entry month number: ");
             Task_05 task = new Task_05(keyboard.nextInt());
         }while( true);
+
+         */
+        Task_06 task = new Task_06(5.00);
+        System.out.println("Current meters: "+ task.meters + "\n" +task.GetYards() + "\n" + task.GetMiles());
     }
 }

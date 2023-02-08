@@ -18,10 +18,11 @@ public class Task_03
               }
           }while(arr.length != 3);
       }else{
-          System.out.printf("Must be more than 0");
+           System.out.printf("Must be more than 0");
           System.exit(-1);
       }
   }
+
     public int GenerateInt()
     {
          String number = arr[0] + arr[1] + arr[2];
