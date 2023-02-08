@@ -5,10 +5,12 @@ public class Main {
     {
         /*
         Task_01 task = new Task_01();
-        task.Show();
-        task = null;
-        */
+                task.Show();
+
          Task_02 task = new Task_02(0);
          System.out.printf(task.GetPercent());
+      */
+        Task_03 task = new Task_03(3);
+        System.out.printf("Generate integer from string : " + task.GenerateInt());
     }
 }
