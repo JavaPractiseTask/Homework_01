@@ -25,8 +25,13 @@ public class Main {
             Task_05 task = new Task_05(keyboard.nextInt());
         }while( true);
 
-         */
+
         Task_06 task = new Task_06(5.00);
         System.out.println("Current meters: "+ task.meters + "\n" +task.GetYards() + "\n" + task.GetMiles());
+
+         */
+       // Task_07 task = new Task_07(1,16);
+        Task_07 task = new Task_07(1,16);
+
     }
 }
