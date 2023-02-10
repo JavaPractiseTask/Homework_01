@@ -2,7 +2,7 @@ package Task;
 
 public class Task_01 {
     /**
-     * @GetText() -- Show some including string
+     * Show some including string
      */
     public void Show()
     {

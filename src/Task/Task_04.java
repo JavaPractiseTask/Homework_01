@@ -1,19 +1,26 @@
 package Task;
 import java.util.Scanner;
 
-public class Task_04
+public class Task_04 implements Runnable
 {
     public int number;
-    public Task_04()
+    /**
+     * Get digit
+     */
+    public void GetDigit()
     {
-        var keyboard = new Scanner(System.in);
         do {
+            var keyboard = new Scanner(System.in);
             System.out.print("Entry 6-digit value: ");
-              number = keyboard.nextInt();
+            number = keyboard.nextInt();
             System.out.println(Math.ceil(Math.log10(number)) == 6 ? "Status: OK\n" + SplitInteger() : "Retry again!");
         }while(Math.ceil(Math.log10(number)) !=6);
     }
 
+    /**
+     * Combine number digit
+     * @return
+     */
     public String SplitInteger()
     {
         int six ,five,first, two , one;
@@ -24,4 +31,11 @@ public class Task_04
             one = (number % 10000) / 100;
        return ("Current number : " + number + "\n" + "Split number: " + six + five + one + two + first);
      }
+
+    @Override
+    public void run()
+    {
+        GetDigit();
+        SplitInteger();
+    }
 }

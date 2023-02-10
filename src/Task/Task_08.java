@@ -1,26 +1,52 @@
 package Task;
 
-public class Task_08 {
+import java.util.Scanner;
 
-    public Task_08(int range_1 , int range_2)
+public class Task_08 implements Runnable {
+
+    private int range_0;
+    private int range_1;
+    /**
+     * Installing range
+     */
+    public void GetValue()
     {
-        Calculate(range_1,range_2);
+        Scanner sc = new Scanner(System.in);
+            System.out.print("Set value for top range: ");
+            range_0 = sc.nextInt();
+            System.out.print("Set value for down range: ");
+            range_1 = sc.nextInt();
     }
 
-    public void Calculate(int items, int items_2)
+    /**
+     * Show multi-table
+     */
+    public void Calculate()
     {
-       for (int i = items; i<items_2; i++)
+       for (int i = range_0; i<range_1; i++)
        {
-           for (int j=1 ; j<items_2; j++)
+           for (int j=1 ; j<range_1; j++)
            {
                if(j / 2 == 2) // Условие для генерации пар колонок в консоли (Актуально для данного ТЗ)
                {
                    System.out.print(j + "x"+ i +"="+(j*i) + '\t');
                    System.out.printf("\n");
-               }else {
+               }else{
                    System.out.print(j + "x"+ i +"="+(j*i) + '\t');
                }
            }
        }
+    }
+
+    /**
+     * Run methods
+     */
+    @Override
+    public void run()
+    {
+        do{
+            GetValue();
+            Calculate();
+        }while(range_0 > 0 );
     }
 }

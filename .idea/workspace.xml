@@ -7,7 +7,15 @@
     <list default="true" id="9d33d01e-5c55-4255-9e75-bfd444b495c2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Task/Task_01.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Task/Task_01.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Task/Task_02.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Task/Task_02.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Task/Task_03.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Task/Task_03.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Task/Task_04.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Task/Task_04.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Task/Task_05.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Task/Task_05.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Task/Task_06.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Task/Task_06.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Task/Task_07.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Task/Task_07.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Task/Task_08.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Task/Task_08.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Task/Task_09.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Task/Task_09.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,19 +41,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
@@ -70,7 +79,8 @@
       <updated>1675863701142</updated>
       <workItem from="1675863702871" duration="7409000" />
       <workItem from="1675885903555" duration="9680000" />
-      <workItem from="1675945173479" duration="3524000" />
+      <workItem from="1675945173479" duration="4531000" />
+      <workItem from="1675950858189" duration="29154000" />
     </task>
     <servers />
   </component>

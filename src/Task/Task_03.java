@@ -1,32 +1,37 @@
 package Task;
+import java.util.Arrays;
 import java.util.Scanner;
+import java.util.stream.Stream;
 
-public class Task_03
+public class Task_03 implements Runnable
 {
-  public String [] arr;
-  public Task_03(int value)
+  private String [] arr;
+
+  public void GetDigitValue()
   {
-      var keyboard = new Scanner(System.in);
-      if(value>0)
+      Scanner keyboard = new Scanner(System.in);
+      arr= new String[3];
+      for (int i=0; i<arr.length; i++)
       {
-          arr= new String[value];
-          do {
-              for (int i=0; i<arr.length; i++)
-              {
-                  System.out.print("Enter " + (i+1) + " digit: ");
-                  arr[i] = keyboard.next();
-              }
-          }while(arr.length != 3);
-      }else{
-           System.out.printf("Must be more than 0");
-          System.exit(-1);
+            System.out.print("Enter " + (i+1) + " digit: ");
+          arr[i] = keyboard.next();
       }
   }
-
-    public int GenerateInt()
+    /**
+     * Build int value
+     * @return Int Value
+     */
+    public int GenerateDigit()
     {
          String number = arr[0] + arr[1] + arr[2];
-        return (Integer.parseInt(number));
+          int digit = Integer.parseInt(arr[0]+arr[1]+arr[2]);
+        return digit;
+    }
+
+    @Override
+    public void run() {
+        GetDigitValue();
+        System.out.println("Building integer digit: "+GenerateDigit());
     }
 }
 

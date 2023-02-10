@@ -1,24 +1,38 @@
 package Task;
 
-public class Task_02 {
-    public int number = 0;
-    public int percent = 10;
-    public Task_02(int value)
+import java.util.Scanner;
+
+public class Task_02 implements Runnable {
+    private int number;
+    private int percent;
+
+    /**
+     *
+     *  Get digit anywhere
+     */
+    public void GetDigit()
     {
-        if(value != 0 && value > 0)
-        {
-            number = value;
-        }else{
-            System.out.println("Must more than zero");
-            System.exit(-1);
-        }
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Entry digit value: ");
+        number = sc.nextInt() ;
+        System.out.print("Entry percent: ");
+        percent = sc.nextInt();
     }
 
-    public String GetPercent()
+    /**
+     *
+     * Get percent as string
+     */
+    public String Calculate()
     {
-        return ("Task 2 " +
-                "Number:" + number  + "\n" +
-                "Percent" + percent + "\n" +
-                "Value:"  + number / 10);
+        return ("\nNumber:" + number  + "\n" +
+                "Percent:"  + percent + "\n" +
+                "Value:"    + (number / percent));
+    }
+
+    @Override
+    public void run() {
+        GetDigit();
+        System.out.println("Get percent:" + Calculate());
     }
 }
