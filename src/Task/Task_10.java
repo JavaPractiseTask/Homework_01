@@ -17,9 +17,22 @@ public class Task_10 implements Runnable{
     /**
      * Get arr with even digit
      */
-    public void FillEvenArr()
+    public void FillEvenArr(int [] tmp)
     {
-
+        int counter = 0;
+        if(Integer.parseInt(String.valueOf(even)) > 0) {
+            evenArr = new int[Integer.parseInt(String.valueOf(even))];
+            for(int items : arr)
+            {
+                if(items % 2 == 0)
+                {
+                     evenArr[counter] = items;
+                    counter+=1;
+                }
+            }
+              System.out.println(evenArr.length > 0 ? "Save data to arr successfully " : "Array generated is failed");
+            Show(evenArr, evenArr.length,"Show new arr: ");
+        }
     }
 
     /**
@@ -40,11 +53,11 @@ public class Task_10 implements Runnable{
      * Show collection
      * @return When statement is false, then method return error code -1
      */
-    public void Show()
+    public void Show(int [] arr, int size,String msg)
     {
         if(arr.length > 0)
         {
-            System.out.print("Array show : ");
+            System.out.print(msg);
             Arrays.stream(arr).forEach(items -> System.out.print(items+"\t"));
             System.out.println("\n");
         }
@@ -90,8 +103,9 @@ public class Task_10 implements Runnable{
     public void run() {
         System.out.println(FillRandom(100, 20));
         FillRandom(999,15);
-        Show();
+        Show(this.arr, arr.length, "Show Array: ");
         CalcEven();
         EjectEvenNumber();
+        FillEvenArr(this.arr);
     }
 }
