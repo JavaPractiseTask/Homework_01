@@ -17,21 +17,32 @@ public class Task_10 implements Runnable{
     private AtomicInteger even = new AtomicInteger();
 
     /**
-     * Get arr with even digit
+     * Eject positive digit to arr
+     * @param tmp
      */
 
     public void FillPositiveArr(int [] tmp)
     {
+        int counter = 0;
         if(tmp.length >0)
         {
             positive = new int [Integer.parseInt(String.valueOf(positiveN))];
             for(int item : tmp)
             {
-
+                if(item > 0)
+                {
+                     positive[counter] = item;
+                    counter+=1;
+                }
             }
+            System.out.println(positive.length > 0 ? "Save data to arr successfully" : "Array generate is failed");
+            Show(positive,positive.length , "Read arr with positive digit: ");
         }
     }
 
+    /**
+     * Eject arr with even digit
+     */
     public void FillEvenArr(int [] tmp)
     {
         int counter = 0;
@@ -45,7 +56,7 @@ public class Task_10 implements Runnable{
                     counter+=1;
                 }
             }
-               System.out.println(evenArr.length > 0 ? "Save data to arr successfully " : "Array generated is failed");
+               System.out.println(evenArr.length > 0 ? "Save data to arr successfully " : "Array generate is failed");
             Show(evenArr, evenArr.length,"Read arr with even digit: ");
         }
     }
@@ -143,5 +154,6 @@ public class Task_10 implements Runnable{
         CalcPositive();
        // EjectEvenNumber();
         FillEvenArr(this.arr);
+        FillPositiveArr(this.arr);
     }
 }
