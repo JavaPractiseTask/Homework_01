@@ -11,7 +11,10 @@ public class Task_10 implements Runnable{
     private int [] evenArr = null;
     private int [] notEvenArr = null;
     private int [] positive = null;
+    private int [] negative = null;
     private int capacity  = 0;
+
+    private AtomicInteger negativeN = new AtomicInteger();
     private AtomicInteger positiveN = new AtomicInteger();
     private AtomicInteger notEven = new AtomicInteger();
     private AtomicInteger even = new AtomicInteger();
@@ -35,7 +38,7 @@ public class Task_10 implements Runnable{
                     counter+=1;
                 }
             }
-            System.out.println(positive.length > 0 ? "Save data to arr successfully" : "Array generate is failed");
+               System.out.println(positive.length > 0 ? "Save data to arr successfully" : "Array generate is failed");
             Show(positive,positive.length , "Read arr with positive digit: ");
         }
     }
@@ -78,7 +81,7 @@ public class Task_10 implements Runnable{
 
 
     /**
-     * Show collection
+     * Show array
      * @return When statement is false, then method return error code -1
      */
     public void Show(int [] arr, int size,String msg)
@@ -91,10 +94,20 @@ public class Task_10 implements Runnable{
         }
     }
 
+    public AtomicInteger CalcNegative()
+    {
+        if(arr.length > 0)
+        {
+            Arrays.stream(arr)
+                    .filter(value -> (value < 0))
+                    .forEach(items ->{negativeN.addAndGet(1);});
+            System.out.println(Integer.parseInt(String.valueOf(negativeN)) > 0 ? "Negative digit: " + negativeN + " items" :  "Negative digit not found");
+        }
+        return negativeN;
+    }
     /**
-     * Calc Even Number
-     *
-     * @return digit with even count
+     * Calculate even items
+     * @return
      */
     public AtomicInteger CalcEven()
     {
@@ -102,11 +115,15 @@ public class Task_10 implements Runnable{
         {
             Arrays.stream(arr).filter(value -> value % 2 == 0)
                               .forEach(items ->{even.addAndGet(1);});
-            System.out.println(Integer.parseInt(String.valueOf(even)) > 0 ? "Even digit: " + even :  " Even digit not found");
+            System.out.println(Integer.parseInt(String.valueOf(even)) > 0 ? "Even digit: " + even + " items":  " Even digit not found");
         }
         return even;
     }
 
+    /**
+     * Calculate Positive items
+     * @return
+     */
     public AtomicInteger CalcPositive()
     {
         Arrays.stream(arr).filter(value-> value > 0).forEach(items->{positiveN.addAndGet(1);});
@@ -131,6 +148,9 @@ public class Task_10 implements Runnable{
         }
     }
 
+    /**
+     * Eject Positive Number
+     */
     public void EjectPositiveNumber()
     {
         if(arr.length > 0)
@@ -152,6 +172,7 @@ public class Task_10 implements Runnable{
         Show(this.arr, arr.length, "Show Array: ");
         CalcEven();
         CalcPositive();
+        CalcNegative();
        // EjectEvenNumber();
         FillEvenArr(this.arr);
         FillPositiveArr(this.arr);
