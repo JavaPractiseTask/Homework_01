@@ -10,6 +10,7 @@ public class Task_10 implements Runnable{
     private int [] arr = null;
     private int [] evenArr = null;
     private int [] notEvenArr = null;
+    private int [] positive = null;
     private int capacity = 0;
     private AtomicInteger notEven = new AtomicInteger();
     private AtomicInteger even = new AtomicInteger();
@@ -17,16 +18,20 @@ public class Task_10 implements Runnable{
     /**
      * Get arr with even digit
      */
+    public void FillPositiveArr()
+    {
+
+    }
     public void FillEvenArr(int [] tmp)
     {
         int counter = 0;
-        if(Integer.parseInt(String.valueOf(even)) > 0) {
+        if(tmp.length > 0) {
             evenArr = new int[Integer.parseInt(String.valueOf(even))];
-            for(int items : arr)
+            for(int items : tmp)
             {
                 if(items % 2 == 0)
                 {
-                     evenArr[counter] = items;
+                      evenArr[counter] = items;
                     counter+=1;
                 }
             }
