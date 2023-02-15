@@ -91,7 +91,7 @@ public class Task_09 implements Runnable
     public void run() {
         Create();
         Fill();
-      //  MapToStream();
+      // MapToStream();
         Show();
         Max();
         Min();
