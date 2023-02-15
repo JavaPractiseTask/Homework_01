@@ -7,16 +7,26 @@ import java.util.stream.IntStream;
 
 public class Task_10 implements Runnable{
 
-    public int [] arr = null;
-    public int capacity = 0;
+    private int [] arr = null;
+    private int [] evenArr = null;
+    private int [] notEvenArr = null;
+    private int capacity = 0;
+    private AtomicInteger notEven = new AtomicInteger();
+    private AtomicInteger even = new AtomicInteger();
 
     /**
-     * Create and fill arr
-     * @param range
-     * @param size
-     * @return
+     * Get arr with even digit
      */
-    public String Fill(int range , int size)
+    public void FillEvenArr()
+    {
+
+    }
+
+    /**
+     * Generate random digit value
+     * @return . Return only error message
+     */
+    public String FillRandom(int range , int size)
     {
         capacity =  size;
         if(size > 0 && range > 0)
@@ -26,38 +36,64 @@ public class Task_10 implements Runnable{
         }
         return "Params must be more than 0. Abort!";
     }
-
-    public int Show(int [] array)
+    /**
+     * Show collection
+     * @return When statement is false, then method return error code -1
+     */
+    public int Show()
     {
-        System.out.print("Array show : ");
-        if(array.length > 0)
+        if(arr.length > 0)
         {
-            Arrays.stream(array).forEach(items -> System.out.print(items+"\t"));
+            System.out.print("Array show : ");
+            Arrays.stream(arr).forEach(items -> System.out.print(items+"\t"));
             System.out.println("\n");
         }
         return -1;
     }
 
-    public void EjectEvenNumber(int [] array)
+    /**
+     * Calc Even Number
+     *
+     * @return digit with even count
+     */
+    public AtomicInteger CalcEven()
     {
-        int [] even = null;
-        AtomicInteger count = new AtomicInteger();
-        System.out.print("Even digit: ");
-        if(array.length > 0) {
-            Arrays.stream(array)
-                    .filter(value -> value % 2 == 0)
-                    .forEach(items->{
-                        count.addAndGet(1);
-                        System.out.print(items + "\t");
-                    });
-            System.out.println("\nAll even number found: " + count);
+        if(arr.length > 0)
+        {
+            Arrays.stream(arr).filter(value -> value % 2 == 0)
+                              .forEach(items ->{even.addAndGet(1);});
+            System.out.println(Integer.parseInt(String.valueOf(even)) > 0 ? "All even number found : " + even :  " Even number not found");
         }
+        return even;
     }
+
+    /**
+     * Show collection with even number
+     * @return When statement is false , method return error code as -1
+     */
+    public int EjectEvenNumber()
+    {
+        System.out.print("Even digit: ");
+        if(arr.length > 0) {
+            Arrays.stream(arr)
+                  .filter(value -> value % 2 == 0)
+                  .forEach(items->{
+                         System.out.print(items + "\t");
+                    });
+            System.out.println();
+        }
+        return -1;
+    }
+
+    /**
+     * Interface runnable method
+     */
     @Override
     public void run() {
-        System.out.println(Fill(100, 20));
-        Fill(999,15);
-        Show(this.arr);
-        EjectEvenNumber(this.arr);
+        System.out.println(FillRandom(100, 20));
+        FillRandom(999,15);
+        Show();
+        EjectEvenNumber();
+        CalcEven();
     }
 }
