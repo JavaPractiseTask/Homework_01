@@ -24,7 +24,11 @@ public class Task_10 implements Runnable{
     {
         if(tmp.length >0)
         {
+            positive = new int [Integer.parseInt(String.valueOf(positiveN))];
+            for(int item : tmp)
+            {
 
+            }
         }
     }
 
@@ -42,7 +46,7 @@ public class Task_10 implements Runnable{
                 }
             }
                System.out.println(evenArr.length > 0 ? "Save data to arr successfully " : "Array generated is failed");
-            Show(evenArr, evenArr.length,"Show new arr: ");
+            Show(evenArr, evenArr.length,"Read arr with even digit: ");
         }
     }
 
@@ -137,7 +141,7 @@ public class Task_10 implements Runnable{
         Show(this.arr, arr.length, "Show Array: ");
         CalcEven();
         CalcPositive();
-        EjectEvenNumber();
+       // EjectEvenNumber();
         FillEvenArr(this.arr);
     }
 }
