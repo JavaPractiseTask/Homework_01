@@ -20,10 +20,31 @@ public class Task_10 implements Runnable{
     private AtomicInteger even = new AtomicInteger();
 
     /**
+     * Eject negative digit to arr
+     */
+    public void FillNegativeArr(int [] tmp)
+    {
+        int counter = 0;
+        if(tmp.length > 0)
+        {
+            negative = new int[Integer.parseInt(String.valueOf(negativeN))];
+            for (int item : tmp)
+            {
+                if(item < 0)
+                {
+                      negative[counter] = item;
+                    counter+=1;
+                }
+            }
+        }
+           System.out.println(negative.length > 0 ? "Save negative digit to arr successfully" : "Array generate is failed");
+        Show(negative,negative.length , "Read arr with negative digit: ");
+    }
+
+    /**
      * Eject positive digit to arr
      * @param tmp
      */
-
     public void FillPositiveArr(int [] tmp)
     {
         int counter = 0;
@@ -38,7 +59,7 @@ public class Task_10 implements Runnable{
                     counter+=1;
                 }
             }
-               System.out.println(positive.length > 0 ? "Save data to arr successfully" : "Array generate is failed");
+               System.out.println(positive.length > 0 ? "Save positive digit to arr successfully" : "Array generate is failed");
             Show(positive,positive.length , "Read arr with positive digit: ");
         }
     }
@@ -59,7 +80,7 @@ public class Task_10 implements Runnable{
                     counter+=1;
                 }
             }
-               System.out.println(evenArr.length > 0 ? "Save data to arr successfully " : "Array generate is failed");
+               System.out.println(evenArr.length > 0 ? "Save even digit to arr successfully " : "Array generate is failed");
             Show(evenArr, evenArr.length,"Read arr with even digit: ");
         }
     }
@@ -74,7 +95,7 @@ public class Task_10 implements Runnable{
         if(size > 0 && range > 0)
         {
             arr = IntStream.generate(() -> new Random().nextInt(range) - 200).limit(size).toArray();
-           return((arr.length > 0 ? "[ ++ ] Fill is successfully" : "[--] Method Fill is failed. Retry again"));
+           return((arr.length > 0 ? "[ ++ ] Method Fill is successfully" : "[--] Method Fill is failed. Retry again"));
         }
         return "Params must be more than 0. Abort!";
     }
@@ -176,5 +197,6 @@ public class Task_10 implements Runnable{
        // EjectEvenNumber();
         FillEvenArr(this.arr);
         FillPositiveArr(this.arr);
+        FillNegativeArr(this.arr);
     }
 }
