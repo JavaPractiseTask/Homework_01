@@ -9,15 +9,15 @@ public class Task_10 implements Runnable{
 
     private int [] arr = null;
     private int [] evenArr = null;
-    private int [] notEvenArr = null;
+    private int [] odd = null;
     private int [] positive = null;
     private int [] negative = null;
     private int capacity  = 0;
 
     private AtomicInteger negativeN = new AtomicInteger();
     private AtomicInteger positiveN = new AtomicInteger();
-    private AtomicInteger notEven = new AtomicInteger();
     private AtomicInteger even = new AtomicInteger();
+    private AtomicInteger oddN = new AtomicInteger();
 
     /**
      * Eject negative digit to arr
@@ -65,6 +65,27 @@ public class Task_10 implements Runnable{
     }
 
     /**
+     * Fill odd digit to arr
+     */
+     public void FillOddArr(int [] tmp)
+     {
+         int counter = 0;
+         if(tmp.length > 0) {
+             odd = new int[Integer.parseInt(String.valueOf(negativeN))];
+             for(int items : tmp)
+             {
+                 if(items % 2 != 0)
+                 {
+                       odd[counter] = items;
+                     counter+=1;
+                 }
+             }
+              System.out.println(odd.length > 0 ? "Save odd digit to arr successfully " : "Array generate is failed");
+             Show(odd, odd.length,"Read arr with odd digit: ");
+         }
+     }
+
+    /**
      * Eject arr with even digit
      */
     public void FillEvenArr(int [] tmp)
@@ -100,7 +121,6 @@ public class Task_10 implements Runnable{
         return "Params must be more than 0. Abort!";
     }
 
-
     /**
      * Show array
      * @return When statement is false, then method return error code -1
@@ -125,6 +145,20 @@ public class Task_10 implements Runnable{
             System.out.println(Integer.parseInt(String.valueOf(negativeN)) > 0 ? "Negative digit: " + negativeN + " items" :  "Negative digit not found");
         }
         return negativeN;
+    }
+
+    /**
+     * Calculate Odd items
+     */
+    public AtomicInteger CalcOdd()
+    {
+        if(arr.length > 0)
+        {
+            Arrays.stream(arr).filter(value -> value % 2 != 0)
+                    .forEach(items ->{oddN.addAndGet(1);});
+            System.out.println(Integer.parseInt(String.valueOf(even)) > 0 ? "Odd digit: " + even + " items":  " Odd digit not found");
+        }
+        return oddN;
     }
     /**
      * Calculate even items
@@ -192,6 +226,7 @@ public class Task_10 implements Runnable{
         FillRandom(999,15);
         Show(this.arr, arr.length, "Show Array: ");
         CalcEven();
+        CalcOdd();
         CalcPositive();
         CalcNegative();
        // EjectEvenNumber();
