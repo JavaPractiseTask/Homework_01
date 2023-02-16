@@ -71,7 +71,7 @@ public class Task_10 implements Runnable{
      {
          int counter = 0;
          if(tmp.length > 0) {
-             odd = new int[Integer.parseInt(String.valueOf(negativeN))];
+             odd = new int[Integer.parseInt(String.valueOf(oddN))];
              for(int items : tmp)
              {
                  if(items % 2 != 0)
@@ -144,6 +144,7 @@ public class Task_10 implements Runnable{
                     .forEach(items ->{negativeN.addAndGet(1);});
             System.out.println(Integer.parseInt(String.valueOf(negativeN)) > 0 ? "Negative digit: " + negativeN + " items" :  "Negative digit not found");
         }
+          System.out.println("\n");
         return negativeN;
     }
 
@@ -233,5 +234,6 @@ public class Task_10 implements Runnable{
         FillEvenArr(this.arr);
         FillPositiveArr(this.arr);
         FillNegativeArr(this.arr);
+        FillOddArr(this.arr);
     }
 }
