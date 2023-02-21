@@ -11,7 +11,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 @Getter
 @Setter
 public class TaskRun implements Runnable {
-    public List<Runnable> list = null;
+    private List<Runnable> list = null;
     private int counter = 0;
 
     /**
