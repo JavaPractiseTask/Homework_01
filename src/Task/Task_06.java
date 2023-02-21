@@ -11,34 +11,39 @@ public class Task_06 implements Runnable
     /**
      * Get value for convert to yards or miles
      */
-    public void GetValue()
+    public int GetValue()
     {
         Scanner sc = new Scanner(System.in);
             System.out.println("Entry value for: ");
             meters = sc.nextInt();
+        return (int)meters;
     }
     /**
-     *
      * @return miles as string
      */
     public String GetMiles()
     {
-        return ("Get miles: " + String.format("%.3f" ,meters / 1609.00));
+        return ("Get miles: " + String.format("%.3f" ,(meters / 1609.00)));
     }
 
     /**
-     *
      * @return yards as string
      */
     public String GetYards()
     {
-        return ("Get yard:" + String.format("%.3f", meters * 1.094));
+        return ("Get yard: " + String.format("%.3f", (meters * 1.094)));
     }
 
     @Override
     public void run() {
-       GetValue();
-       System.out.println(GetMiles() + "" + GetYards());
-
+        try{
+            do{
+                GetValue();
+                System.out.println(GetMiles()+ "\n"+ GetYards());
+            }while(meters != 0);
+        }catch(Exception ex)
+        {
+            System.out.println(ex.getMessage()); // For divide by zero exception in current task
+        }
     }
 }

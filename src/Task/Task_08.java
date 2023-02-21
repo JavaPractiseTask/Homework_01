@@ -12,7 +12,7 @@ public class Task_08 implements Runnable {
     public void GetValue()
     {
         Scanner sc = new Scanner(System.in);
-            System.out.print("Set value for top range: ");
+            System.out.print("Entry 0 a two time for exit \n Set value for top range: ");
             range_0 = sc.nextInt();
             System.out.print("Set value for down range: ");
             range_1 = sc.nextInt();

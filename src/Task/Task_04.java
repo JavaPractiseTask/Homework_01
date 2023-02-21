@@ -35,7 +35,12 @@ public class Task_04 implements Runnable
     @Override
     public void run()
     {
-        GetDigit();
-        SplitInteger();
+        try{
+            GetDigit();
+            SplitInteger();
+        }catch (Exception ex)
+        {
+            System.out.println(ex.getMessage());
+        }
     }
 }

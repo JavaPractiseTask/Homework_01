@@ -27,8 +27,7 @@ public class Task_05 implements Runnable
     {
         switch (number) {
                 case 0:
-                    System.exit(0);
-                    break;
+                break;
                 case 1:
                 case 2:
                     System.out.printf("It's a winter" +"\n");
@@ -59,9 +58,14 @@ public class Task_05 implements Runnable
 
     @Override
     public void run() {
-       while(true)
-       {
-          GetDigitMonths(EntryDigitNumber());
-       }
+        try{
+            do{
+                GetDigitMonths(EntryDigitNumber());
+            }while(EntryDigitNumber() != 0);
+        }catch (Exception ex)
+        {
+            System.out.println(ex.getMessage());
+        }
+
     }
 }

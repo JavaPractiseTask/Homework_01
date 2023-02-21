@@ -1,26 +1,23 @@
 package Task;
-
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.stream.IntStream;
-
 public class Task_09 implements Runnable
 {
     private int [] arr;
     private int size;
-  //private IntStream stream = null;
 
     /**
      * Create array
      */
-    public void Create()
+    public int Create()
     {
         Scanner sc = new Scanner(System.in);
-            System.out.print("Entry length: ");
+            System.out.print("Press 0 for exit\nEntry length: ");
             size = sc.nextInt();
             arr = new int[size];
+        return size;
     }
 
     /**
@@ -45,7 +42,6 @@ public class Task_09 implements Runnable
         System.out.println("Array Contains : ");
         Arrays.stream(arr).forEach(value -> System.out.print(value + "\t"));
     }
-
     /**
      * Find max value
      */
@@ -77,25 +73,17 @@ public class Task_09 implements Runnable
     {
         System.out.println("Positive value: " + Arrays.stream(arr).filter(item -> item > 0).count());
     }
-    /*
 
-    public void MapToStream()
-    {
-        stream = Arrays.stream(arr);
-        {
-            System.out.println(stream.count() > 0 ? "Status : OK . Add" + stream.count() + "is successfull" : "Status: Stream is missing. Abort");
-        };
-    }
-   */
     @Override
     public void run() {
-        Create();
-        Fill();
-      // MapToStream();
-        Show();
-        Max();
-        Min();
-        FindNegativeValue();
-        FindPositiveValue();
+       do {
+           Create();
+           Fill();
+           Show();
+           Max();
+           Min();
+           FindNegativeValue();
+           FindPositiveValue();
+       }while(Create() !=0);
     }
 }

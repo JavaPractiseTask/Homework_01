@@ -30,8 +30,13 @@ public class Task_03 implements Runnable
 
     @Override
     public void run() {
-        GetDigitValue();
-        System.out.println("Building integer digit: "+GenerateDigit());
+        try{
+            GetDigitValue();
+            System.out.println("Building integer digit: "+GenerateDigit());
+        }catch (Exception ex)
+        {
+            System.out.println(ex.getMessage());
+        }
     }
 }
 

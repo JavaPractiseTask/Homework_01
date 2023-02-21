@@ -9,36 +9,42 @@ public class Task_07 implements Runnable{
     /**
      *  Set up digit range to properties
      */
-    public void GetValue()
+    public int GetValue()
     {
-        do{
-            Scanner sc = new Scanner(System.in);
-            System.out.print("Entry digit range #1: ");
+        Scanner sc = new Scanner(System.in);
+            System.out.print("Press 0 for skip\nEntry digit range #1: ");
             range_0 = sc.nextInt();
             System.out.print("Entry digit range #2: ");
             range_1 = sc.nextInt();
-        }while(range_0 !=0 && range_1 !=0);
-
+        return range_0;
     }
 
+    public int GetDigitRow(int value)
+    {
+        if (value % 2 != 0) {
+            return value;
+        }
+        return value;
+    }
     /**
      * Calculate function
      */
-    public void Calculate(int range , int range_2) {
-        if (range > 0 && range_2 > 0) {
-            for (int i = range; i < range_2; i++) {
-                if (i % 2 != 0) {
-                    System.out.print(i + " ");
-                }
+    public void Calculate() {
+        if (range_0 < range_1) {
+            System.out.println("Skip row: ");
+            for (int i = range_0+1; i < range_1; i++)
+            {
+                System.out.print(GetDigitRow(i) + "\t");
             }
-        } else {
-            System.out.println("Must be more than 0 ");
         }
     }
 
     @Override
     public void run()
     {
-        GetValue();
+        do{
+            GetValue();
+            Calculate();
+        }while(GetValue() !=0);
     }
 }

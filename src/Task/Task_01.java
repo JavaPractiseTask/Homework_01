@@ -14,6 +14,7 @@ public class Task_01 implements Runnable {
 
     @Override
     public void run() {
+
         this.Show();
     }
 }

@@ -80,8 +80,7 @@ public class Task_10 implements Runnable{
                      counter+=1;
                  }
              }
-              System.out.println(odd.length > 0 ? "Save odd digit to arr successfully " : "Array generate is failed");
-             Show(odd, odd.length,"Read arr with odd digit: ");
+              System.out.println(odd.length > 0 ? Show(odd, odd.length,"Read arr with odd digit: ") : "Array generate is failed");
          }
      }
 
@@ -108,7 +107,7 @@ public class Task_10 implements Runnable{
 
     /**
      * Generate random digit value
-     * @return . Return only error message
+     * @return . Returnerror message
      */
     public String FillRandom(int range , int size)
     {
@@ -123,9 +122,10 @@ public class Task_10 implements Runnable{
 
     /**
      * Show array
-     * @return When statement is false, then method return error code -1
+     *
+     * @return
      */
-    public void Show(int [] arr, int size,String msg)
+    public Object Show(int [] arr, int size, String msg)
     {
         if(arr.length > 0)
         {
@@ -133,6 +133,7 @@ public class Task_10 implements Runnable{
             Arrays.stream(arr).forEach(items -> System.out.print(items+"\t"));
             System.out.println("\n");
         }
+        return null;
     }
 
     public AtomicInteger CalcNegative()
@@ -140,8 +141,8 @@ public class Task_10 implements Runnable{
         if(arr.length > 0)
         {
             Arrays.stream(arr)
-                    .filter(value -> (value < 0))
-                    .forEach(items ->{negativeN.addAndGet(1);});
+                  .filter(value -> (value < 0))
+                  .forEach(items ->{negativeN.addAndGet(1);});
             System.out.println(Integer.parseInt(String.valueOf(negativeN)) > 0 ? "Negative digit: " + negativeN + " items" :  "Negative digit not found");
         }
           System.out.println("\n");
@@ -156,7 +157,7 @@ public class Task_10 implements Runnable{
         if(arr.length > 0)
         {
             Arrays.stream(arr).filter(value -> value % 2 != 0)
-                    .forEach(items ->{oddN.addAndGet(1);});
+                  .forEach(items ->{oddN.addAndGet(1);});
             System.out.println(Integer.parseInt(String.valueOf(even)) > 0 ? "Odd digit: " + even + " items":  " Odd digit not found");
         }
         return oddN;
@@ -182,14 +183,14 @@ public class Task_10 implements Runnable{
      */
     public AtomicInteger CalcPositive()
     {
-        Arrays.stream(arr).filter(value-> value > 0).forEach(items->{positiveN.addAndGet(1);});
+        Arrays.stream(arr).filter(value-> value > 0)
+                          .forEach(items->{positiveN.addAndGet(1);});
           System.out.println(Integer.parseInt(String.valueOf(positiveN)) > 0 ? "Positive digit: " + positiveN + " items":"Positive items not found");
         return positiveN;
     }
 
     /**
      * Show collection with even number
-     * @return When statement is false , method return error code as -1
      */
     public void EjectEvenNumber()
     {
@@ -223,17 +224,21 @@ public class Task_10 implements Runnable{
      */
     @Override
     public void run() {
-        System.out.println(FillRandom(100, 20));
-        FillRandom(999,15);
-        Show(this.arr, arr.length, "Show Array: ");
-        CalcEven();
-        CalcOdd();
-        CalcPositive();
-        CalcNegative();
-       // EjectEvenNumber();
-        FillEvenArr(this.arr);
-        FillPositiveArr(this.arr);
-        FillNegativeArr(this.arr);
-        FillOddArr(this.arr);
+        try{
+            FillRandom(999,15);
+            Show(this.arr, arr.length, "Show Array: ");
+            CalcEven();
+            CalcOdd();
+            CalcPositive();
+            CalcNegative();
+            // EjectEvenNumber();
+            FillEvenArr(this.arr);
+            FillPositiveArr(this.arr);
+            FillNegativeArr(this.arr);
+            FillOddArr(this.arr);
+        }catch (Exception ex)
+        {
+            System.out.println(ex.getMessage());
+        }
     }
 }

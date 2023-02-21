@@ -11,7 +11,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 @Getter
 @Setter
 public class TaskRun implements Runnable {
-    private List<Runnable> list = null;
+    public List<Runnable> list = null;
     private int counter = 0;
 
     /**
@@ -32,7 +32,6 @@ public class TaskRun implements Runnable {
              add(new Task_11());
         }};
     }
-
     /**
      * Set collection length to the property
      */
@@ -44,6 +43,11 @@ public class TaskRun implements Runnable {
     /**
      * When pressing any key, then show the next task
      */
+    public void MoveToPos(int number)
+    {
+        list.get(number).run();
+    }
+
     public void ShowTask()
     {
         AtomicInteger count = new AtomicInteger();
@@ -52,9 +56,9 @@ public class TaskRun implements Runnable {
             list.stream().forEach(items ->
             {
               count.addAndGet(1);
-                System.out.println("Current Task " + count + ":");
+                System.out.println("\n\n::Task " + count +" at "+counter+ "\n");
                  items.run();
-                    System.out.println("\n\n::Task " + count +" at "+counter+ "\nPress any key to next");
+                    System.out.println("Press any key to next");
                  sc.nextLine();
             });
         }while(Integer.parseInt(String.valueOf(count)) != counter);
