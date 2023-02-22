@@ -1,7 +1,10 @@
 package Task;
-
-import java.util.Scanner;
-
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+@Getter
+@Setter
+@NoArgsConstructor
 public class Task_11 implements Runnable {
     /**
      * Show left

@@ -1,7 +1,12 @@
 package Task;
-
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import java.util.Scanner;
 
+@Getter
+@Setter
+@NoArgsConstructor
 public class Task_06 implements Runnable
 {
     public double meters;

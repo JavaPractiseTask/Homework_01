@@ -1,8 +1,14 @@
 package Task;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.stream.IntStream;
+@Getter
+@Setter
+@NoArgsConstructor
 public class Task_09 implements Runnable
 {
     private int [] arr;

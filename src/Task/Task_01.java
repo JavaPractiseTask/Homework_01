@@ -1,5 +1,12 @@
 package Task;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@NoArgsConstructor
 public class Task_01 implements Runnable {
     /**
      * Show some including string

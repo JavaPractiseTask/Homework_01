@@ -1,7 +1,13 @@
 package Task;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import java.util.Scanner;
 
+@Getter
+@Setter
+@NoArgsConstructor
 public class Task_02 implements Runnable {
     private int number;
     private int percent;
