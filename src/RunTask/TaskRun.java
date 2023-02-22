@@ -2,6 +2,7 @@ package RunTask;
 
 import Task.*;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,6 +11,8 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 @Getter
 @Setter
+@NoArgsConstructor
+
 public class TaskRun implements Runnable {
     private List<Runnable> list = null;
     private int counter = 0;

@@ -4,21 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d33d01e-5c55-4255-9e75-bfd444b495c2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RunTask/TaskRun.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RunTask/TaskRun.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Task/Task_01.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Task/Task_01.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Task/Task_02.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Task/Task_02.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Task/Task_03.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Task/Task_03.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Task/Task_04.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Task/Task_04.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Task/Task_05.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Task/Task_05.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Task/Task_06.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Task/Task_06.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Task/Task_07.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Task/Task_07.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Task/Task_08.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Task/Task_08.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Task/Task_09.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Task/Task_09.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Task/Task_10.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Task/Task_10.java" afterDir="false" />
-    </list>
+    <list default="true" id="9d33d01e-5c55-4255-9e75-bfd444b495c2" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -97,7 +83,7 @@
       <workItem from="1676468760642" duration="29088000" />
       <workItem from="1676553841119" duration="7414000" />
       <workItem from="1676921656396" duration="19007000" />
-      <workItem from="1676989098484" duration="10637000" />
+      <workItem from="1676989098484" duration="11481000" />
     </task>
     <servers />
   </component>
