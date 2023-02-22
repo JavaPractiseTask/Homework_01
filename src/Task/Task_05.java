@@ -1,5 +1,4 @@
 package Task;
-
 import java.util.Scanner;
 
 public class Task_05 implements Runnable
